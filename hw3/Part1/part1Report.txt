@@ -1,0 +1,9 @@
+For the startup programs, I've looked at the website provided and found the correct path for startup programs at
+ [HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\explorer\Shell Folders]
+"Common Startup"="C:\windows\start menu\programs\startup". 
+In the powershell script, I first created an object of FileSystemWatcher. Then I initalize the object's path as the one above. This is the path 
+in which the script will monitor for any changes. Then I filter to monitor all files in that path. I also monitored for any changes in subdirectories.
+Then I created an action that will monitor for any changes in that specified path. If there are changes, then it will log out to a file with the
+date/time, change type(created, changed, deleted, renamed), and the path of the changed file. This script will log out any changes to the path every 
+5 minutes. As in the log file I've added two text files, testing and testing2. Then after the script logs info for the 2 files, I added testing3. 
+This file doesnt appear right away in the log file since the script waits 5 min between finding changes and logging information out.

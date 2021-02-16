@@ -1,0 +1,18 @@
+LAN Setup
+
+kali1(main): IP = 192.168.10.129, netmask 255.255.255.0
+kali2(clone): IP = 192.168.10.130, netmask 255.255.255.0
+
+Port scanner is ran on kali2 and port scanner detector is ran on kali1.
+Both kali vm were on LAN with network adapter set on vmnet5(host only)
+
+Discussion
+
+For the IPlayer function, I used the ip header object and saved its source ip and target ip to an array. I tried to used srcIp as key but dictionary does not allow duplicate keys. 
+Timestamp may work for keys but too long. Ideally the source ip are the keys and for each source ip, the values are the target ip and target port.
+I saved tcp ports from the tcp header in an array. While using the port scanner all tcp ports were closed and all udp ports were opened. However
+using the port scanner detector, only the tcp header was present on the console when trying to debug so I only saved the tcp header and its ports.
+As for the results, if the fan-out rate per sec exceeds 5, or the fan-out rate per minute exceeds 100, or the fan-out rate per 5min exceeds 
+300 (any of these), the source IP is identified as a port-scanner. Port scanner detected on source ip 192.168.10.130 and average fan-out rate per
+second is 1691, average fan-out rate per min is 101484, average fan-out rate per 5 minutes is 507444 and the reason for port scanner detection is
+the average fan-out rate per second is 1691.

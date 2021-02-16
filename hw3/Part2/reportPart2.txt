@@ -1,0 +1,6 @@
+In this bash script, there is a servicecheck function that runs nmap on a specified ip and port as input. In the main function, there is an array
+that stores all the subnet ip addresses from 192.168.10.1-192.168.10.254. This excludes the ip for the default gateway. Then there if a while true 
+loop and inside that is 2 nested for loops. The outer for loop will loop through all the subnet ip addresses in the array and the inner for loop
+will loop through ports 1-65335. For each ip and its ports (1-65335), the script will log if each port is closed or open. After the outer loop 
+finishes the script will sleep for 5 minutes and then try again starting at the first ip address. Also the bottom of the log file will contain the 
+log for port 8008 on kali2(ip= 192.168.10.133).

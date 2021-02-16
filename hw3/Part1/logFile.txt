@@ -1,0 +1,4 @@
+
+07/08/2020 17:39:11, Created, C:\ProgramData\Microsoft\Windows\Start Menu\Programs\StartUp\testing.txt
+07/08/2020 17:39:12, Created, C:\ProgramData\Microsoft\Windows\Start Menu\Programs\StartUp\testin2.txt
+07/08/2020 17:44:12, Created, C:\ProgramData\Microsoft\Windows\Start Menu\Programs\StartUp\testing3.txt
